@@ -1,0 +1,194 @@
+main {
+    background-color: black;
+    width: 820px;
+    min-height: 900px;
+    background-image:
+        linear-gradient(90deg, #190f09 1px, transparent 1px),
+        linear-gradient(#190f09 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-top: 3px solid #FF6B00;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: #060606;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: #f5f5f5;
+    letter-spacing: 3px;
+    line-height: 1;
+    animation: slideDown 0.6s ease both;
+}
+
+.nome {
+    color: #FF6B00;
+    animation: pulso 2.5s ease-in-out infinite;
+    text-shadow: 3px 3px 0 #CC5200, 6px 6px 0 #661f00;
+}
+
+p {
+    color: #aaa;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+}
+
+.faixa {
+    display: inline-block;
+    background: #FF6B00;
+    color: #0A0A0A;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+}
+
+.cor_da_margem {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cor_da_margem::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 1000px;
+    background: conic-gradient(#FF6B00, transparent, #FF6B00);
+    animation: girar 4s linear infinite;
+    z-index: 0;
+}
+
+img {
+    border-radius: 1000px;
+    width: 200px;
+    height: 200px;
+    border: 4px solid #0A0A0A;
+    display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    border-bottom: 1px solid #1E1E1E;
+}
+
+.topo_texto {
+    flex: 1;
+}
+
+.sobre_mim {
+    padding: 24px 40px;
+    border-bottom: 1px solid #1E1E1E;
+}
+
+.sobre_mim p {
+    border-left: 3px solid #FF6B00;
+    padding-left: 16px;
+}
+
+.blocos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    list-style: none;
+    padding: 24px 40px;
+}
+
+.box1{
+    background: #141414;
+    border: 1px solid #1E1E1E;
+    border-left: 4px solid #FF6B00;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.box2{
+    background: #141414;
+    border: 1px solid #1E1E1E;
+    border-left: 4px solid #FF6B00;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.box3{
+    background: #141414;
+    border: 1px solid #1E1E1E;
+    border-left: 4px solid #FF6B00;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.box4{
+        background: #141414;
+    border: 1px solid #1E1E1E;
+    border-left: 4px solid #FF6B00;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.box1 p{
+    color: #f5f5f5;
+    font-size: 15px;
+}
+
+
+.box2 p{
+    color: #f5f5f5;
+    font-size: 15px;
+}
+
+.box3 p{
+    color: #f5f5f5;
+    font-size: 15px;
+}
+
+.box4 p{
+    color: #f5f5f5;
+    font-size: 15px;
+}
+
+footer {
+    border-top: 1px solid #1E1E1E;
+    padding: 20px 40px;
+}
+
+.footer {
+    color: #4C4C4C;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulso {
+    0%   { text-shadow: 3px 3px 0 #CC5200, 6px 6px 0 #661f00; }
+    50%  { text-shadow: 3px 3px 0 #CC5200, 6px 6px 0 #661f00, 0 0 30px rgba(255,107,0,0.6); }
+    100% { text-shadow: 3px 3px 0 #CC5200, 6px 6px 0 #661f00; }
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+
+/* explicação rapida do codigo o codigo conta com 3 animações todas feitas usando somente CSS essas animações são o efeito no qual faz um ponto preto girar em volta da foto, o surgimento da frase "MEU NOME É
+LEONARDO GARBUIO" e por ultimo o pulsar do meu nome o codigo HTML conta  somente com tags basicas como ul para lista ordenada o li para os itens da lista divs, h1 para titulos a main que é o que cria o quadrado
+e algumas outras tags padrões como body tudo foi estilizado usando o arquivo "style.css" usando tambem tags CSS basicas exceto pela animação (as animações não fojem da realidade e não são dificeis de fazer)
+
+então fiz a explicação so para mostrar que não ouve o uso de IA tirei duvidas dentro dela mas todo desde o codigo ao design foi pensado e feito por mim como disse so tirei duvidas mas sem copiar nada */
