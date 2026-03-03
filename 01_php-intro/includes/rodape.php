@@ -8,7 +8,7 @@
 </head>
 <body>
     <footer>
-    <p class="footer">&copy; 2025 <?php echo $nome; ?> &bull; <?php echo $escola; ?> &bull; <?php echo $curso; ?></p>
+    <p class="footer">&copy; 2026 <?php echo $nome; ?> &bull; <?php echo $escola; ?> &bull; <?php echo $curso; ?></p>
     </footer>
 </body>
 </html>
