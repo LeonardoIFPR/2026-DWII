@@ -170,21 +170,47 @@ footer {
     text-align: center;
 }
 
-.nav_inicio{
-    color: #FF6B00;
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none;
+nav {
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.nav_sobre{
+ul{
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav_inicio {
     color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none;
+    font-size: 16px; /* letras maiores */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav_sobre {
+    color: #FF6B00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* letras maiores */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.linha{
+    padding: 24px 40px;
+    border-bottom: 1px solid #1E1E1E;
 }
 
 a{
     text-decoration: none;
-    color: #CC5200;
+    color: #FF6B00;
+    
 }
 
 @keyframes slideDown {

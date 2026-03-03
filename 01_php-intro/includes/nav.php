@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
-    <div class="linda">
+    <div class="linha">
         <nav>
         <ul>
             <li class="nav_inicio"><a href="index.php">INICIO</a></li>

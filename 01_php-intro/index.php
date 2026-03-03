@@ -1,8 +1,4 @@
-<?php
-$nome = "LEONARDO GARBUIO";
-$curso = "Técnico em Informática";
-$escola = "IFPR"
-?>
+<?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,7 +17,7 @@ $escola = "IFPR"
             </div>
 
             <div class="topo_texto">
-                <p class="faixa">
+                <p class="faixa">&#9733; Disciplina WEB II &#9733;</p>
                 <h1>MEU NOME É</h1>
                 <h1><span class="nome"><?php echo $nome; ?></span></h1>
                 <p>Estudante do <?php echo $escola; ?> &bull; <?php echo $curso; ?> &bull; Desde 2023</p>
