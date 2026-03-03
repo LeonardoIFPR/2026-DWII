@@ -1,10 +1,16 @@
+<!--
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 03 - PHP Intro
+  Autor      : Leonardo Garbuio
+  Data       : 02/032026
+-->
 <?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
+    <title>portfolio de <?php echo'nome'; ?></title>
 </head>
 <body>
     <main>

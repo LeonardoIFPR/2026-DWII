@@ -1,3 +1,9 @@
+<!--
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 03 - PHP Intro
+  Autor      : Leonardo Garbuio
+  Data       : 02/032026
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +18,7 @@
         <ul>
             <li class="nav_inicio"><a href="index.php">INICIO</a></li>
             <li class="nav_sobre"><a href="sobre.php">SOBRE</a></li>
+            <li class="nav_projetos"><a href="projetos.php">PROJETOS</a></li>       
         </ul>
     </div>
 </nav>

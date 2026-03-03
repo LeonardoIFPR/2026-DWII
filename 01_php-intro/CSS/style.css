@@ -189,7 +189,7 @@ ul{
 .nav_inicio {
     color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* letras maiores */
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -197,7 +197,15 @@ ul{
 .nav_sobre {
     color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* letras maiores */
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav_projetos {
+    color: #FF6B00;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -212,6 +220,37 @@ a{
     color: #FF6B00;
     
 }
+
+.titulo_projetos {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #f5f5f5;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.descrcao_projetos {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.animacao_entrada { 
+    animation: slideDown 0.5s ease both; 
+}
+
+.projeto_card:nth-child(1) { 
+    animation-delay: 0.05s; 
+}
+
+.projeto_card:nth-child(2) { 
+    animation-delay: 0.10s; 
+}
+
+
+
+
 
 @keyframes slideDown {
     from { opacity: 0; transform: translateX(-20px); }
@@ -230,8 +269,13 @@ a{
 }
 
 
+
 /* explicação rapida do codigo o codigo conta com 3 animações todas feitas usando somente CSS essas animações são o efeito no qual faz um ponto preto girar em volta da foto, o surgimento da frase "MEU NOME É
 LEONARDO GARBUIO" e por ultimo o pulsar do meu nome o codigo HTML conta  somente com tags basicas como ul para lista ordenada o li para os itens da lista divs, h1 para titulos a main que é o que cria o quadrado
 e algumas outras tags padrões como body tudo foi estilizado usando o arquivo "style.css" usando tambem tags CSS basicas exceto pela animação (as animações não fojem da realidade e não são dificeis de fazer)
+
+CSS atualizado o mais novo que coloquei é as novas animações é basicamente a entrada mais devagar dos cards para não aparecerem magicamente na tela no momento que tem so 2 projetos ele funciona mas conforme for adicionando 
+precisa ir adicionando mais efeitos para os novos cards terem (.projeto_card:nth-child(2) { animation-delay: 0.10s; }) so tem que ir sempre adicionando mais 1 numero dentro do parenteses do nth-child e sempre ir adicionando 0,5 seg em animation-delay 
+ou outro numero mas o 0,5 ficou bom então seguir é bom 
 
 então fiz a explicação so para mostrar que não ouve o uso de IA tirei duvidas dentro dela mas todo desde o codigo ao design foi pensado e feito por mim como disse so tirei duvidas mas sem copiar nada */

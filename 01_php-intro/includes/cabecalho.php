@@ -1,3 +1,9 @@
+<!--
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 03 - PHP Intro
+  Autor      : Leonardo Garbuio
+  Data       : 02/032026
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

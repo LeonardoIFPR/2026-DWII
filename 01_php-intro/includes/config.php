@@ -1,3 +1,9 @@
+<!--
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 03 - PHP Intro
+  Autor      : Leonardo Garbuio
+  Data       : 02/032026
+-->
 <?php
 $nome = "LEONARDO GARBUIO";
 $curso = "Técnico em Informática";
