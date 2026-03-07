@@ -28,7 +28,7 @@
         $projetos = [
             [
                 'titulo' => 'Apresentação WEB II',
-                'desc'   => 'Página de apresentação pessoal com PHP, animações CSS e includes.',
+                'desc'   => 'pagina de apresentação pessoal com PHP animações CSS e includes.',
                 'github' => 'https://github.com/LeonardoIFPR/2026-DWII.git',
             ],
             [
