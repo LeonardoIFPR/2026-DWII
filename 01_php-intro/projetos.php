@@ -27,14 +27,24 @@
         <?php
         $projetos = [
             [
-                'titulo' => 'Apresentação WEB II',
-                'desc'   => 'pagina de apresentação pessoal com PHP animações CSS e includes.',
-                'github' => 'https://github.com/LeonardoIFPR/2026-DWII.git',
+                "titulo" => "Apresentação WEB II",
+                "desc" => "pagina de apresentação pessoal com PHP animações CSS e includes.",
+                "github" => "https://github.com/LeonardoIFPR/2026-DWII.git"
             ],
             [
-                'titulo' => 'AppTemplate2026',
-                'desc'   => 'começa do aplicativo que faremos com o professor jailton.',
-                'github' => 'https://github.com/LeonardoIFPR/AppTemplate2026.git',
+                "titulo" => "AppTemplate2026",
+                "desc" => "começa do aplicativo que faremos com o professor jailton.",
+                "github" => "https://github.com/LeonardoIFPR/AppTemplate2026.git"
+            ],
+            [      
+                "titulo" => "Site 3D para uma loja online",
+                "desc" => "Site 3D desenvolvido com HTML, CSS, JS e  Three.js(é oq faz os efeitos 3D).",
+                "github" => "https://github.com/LeonardoGarbuio/ProjetoThiago"                
+            ],
+            [
+                "titulo" => "PRIME-AI",
+                "desc" => "Plataforma SaaS full-stack alimentada por Inteligência Artificial, construída com Next.js, Tailwind e Supabase (e mais algumas coisinhas que não da tempo de citar).",
+                "github" => "https://github.com/LeonardoGarbuio/Prime_ai.git"
             ],
         ];
         ?>
