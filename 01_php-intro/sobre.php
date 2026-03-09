@@ -4,7 +4,9 @@
   Autor      : Leonardo Garbuio
   Data       : 02/032026
 -->
-<?php include 'includes/config.php'; ?>
+<?php include "includes/config.php"; 
+$pagina_atual = "sobre";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +17,7 @@
 </head>
 <body>
     <main>
-        <?php include 'includes/cabecalho.php'; ?>
+        <?php include "includes/cabecalho.php"; ?>
                
                 <ul class="blocos">
             <div class="box1">
@@ -41,7 +43,7 @@
         </ul>
 
         
-        <?php include 'includes/rodape.php'; ?>
+        <?php include "includes/rodape.php"; ?>
     </main>
 </body>
 </html>

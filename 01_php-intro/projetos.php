@@ -4,18 +4,20 @@
   Autor      : Leonardo Garbuio
   Data       : 02/03/2026
 -->
-<?php include 'includes/config.php'; ?>
+<?php include "includes/config.php"; 
+$pagina_atual = "projetos";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Projetos · <?php echo $nome; ?></title>
+    <title>Projetos <?php echo $nome; ?></title>
 </head>
 <body>
     <main>
-        <?php include 'includes/cabecalho.php'; ?>
+        <?php include "includes/cabecalho.php"; ?>
 
         <div class="linha">
             <p class="faixa">&#9733; MEUS PROJETOS &#9733;</p>
@@ -52,15 +54,15 @@
             <?php foreach ($projetos as $p): ?>
             <div class="box1 animacao_entrada">
                 <li>
-                    <p class="titulo_projetos"><?php echo $p['titulo']; ?></p>
-                    <p class="descricao_projetos"><?php echo $p['desc']; ?></p>
-                    <a href="<?php echo $p['github']; ?>" target="_blank">GitHub &rarr;</a>
+                    <p class="titulo_projetos"><?php echo $p["titulo"]; ?></p>
+                    <p class="descricao_projetos"><?php echo $p["desc"]; ?></p>
+                    <a href="<?php echo $p["github"]; ?>" target="_blank">GitHub &rarr;</a>
                 </li>
             </div>
             <?php endforeach; ?>
         </ul>
 
-        <?php include 'includes/rodape.php'; ?>
+        <?php include "includes/rodape.php"; ?>
     </main>
 </body>
 </html>

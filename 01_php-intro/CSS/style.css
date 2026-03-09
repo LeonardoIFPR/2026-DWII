@@ -130,7 +130,7 @@ img {
 }
 
 .box4{
-        background: #141414;
+    background: #141414;
     border: 1px solid #1E1E1E;
     border-left: 4px solid #FF6B00;
     padding: 20px;
@@ -187,7 +187,6 @@ ul{
 }
 
 .nav_inicio {
-    color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -195,7 +194,6 @@ ul{
 }
 
 .nav_sobre {
-    color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -203,7 +201,6 @@ ul{
 }
 
 .nav_projetos {
-    color: #FF6B00;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 700;
