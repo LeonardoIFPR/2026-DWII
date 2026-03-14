@@ -5,7 +5,10 @@
   Data       : 02/03/2026
 -->
 <?php include "includes/config.php"; 
+$nome = "Leonardo";
 $pagina_atual = "projetos";
+$caminho_raiz = "../";
+$titulo_pagina = "Portfolio - {$nome}"
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +20,7 @@ $pagina_atual = "projetos";
 </head>
 <body>
     <main>
-        <?php include "includes/cabecalho.php"; ?>
+        <?php include "../includes/cabecalho.php"; ?>
 
         <div class="linha">
             <p class="faixa">&#9733; MEUS PROJETOS &#9733;</p>
@@ -62,7 +65,7 @@ $pagina_atual = "projetos";
             <?php endforeach; ?>
         </ul>
 
-        <?php include "includes/rodape.php"; ?>
+        <?php include ";;/includes/rodape.php"; ?>
     </main>
 </body>
 </html>

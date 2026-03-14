@@ -5,34 +5,25 @@
   Data       : 02/032026
 -->
 <?php
-$cor_inicio = ($pagina_atual === "inicio")   ? "color: #f0b341; font-weight: bold;" : "color: #FF6B00;";
-$cor_sobre = ($pagina_atual === "sobre")    ? "color: #f0b341; font-weight: bold;" : "color: #FF6B00;";
-$cor_projetos = ($pagina_atual === "projetos") ? "color: #f0b341; font-weight: bold;" : "color: #FF6B00;";
+if (!isset($pagina_atual)) $pagina_atual = "";
+if (!isset($caminho_raiz)) $caminho_raiz = "../";
+
+function menu_class($item, $atual){
+    return ($item === $atual) ? 'class="ativo"' : "";
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-</head>
-<body>
-    <div class="linha">
-        <nav>
-            <ul>
-                <li class="nav_inicio">
-                    <a href="index.php" style="<?= $cor_inicio ?>">INICIO</a>
-                </li>
-                <li class="nav_sobre">
-                    <a href="sobre.php" style="<?= $cor_sobre ?>">SOBRE</a>
-                </li>
-                <li class="nav_projetos">
-                    <a href="projetos.php" style="<?= $cor_projetos ?>">PROJETOS</a>
-                </li>       
-            </ul>
-        </nav>
-    </div>
+
+<nav>
+    <a href="<?php echo $caminho_raiz?>01_php-intro/index.php" <?php echo menu_class("inicio", $pagina_atual);  ?>>
+        INICIO
+    </a>
+    <a href="<?php echo $caminho_raiz?>01_php-intro/sobre.php" <?php echo menu_class("sobre", $pagina_atual);  ?>>
+        SOBRE
+    </a>
+    <a href="<?php echo $caminho_raiz?>01_php-intro/projetos.php" <?php echo menu_class("projetos", $pagina_atual);  ?>>
+        PROJETOS
+    </a>
+    <a href="<?php echo $caminho_raiz?>02_formularios/contato.php" <?php echo menu_class("contato", $pagina_atual);  ?>>
+        CONTATO
+    </a>
 </nav>
-</body>
-</html>

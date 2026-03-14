@@ -5,7 +5,10 @@
   Data       : 02/032026
 -->
 <?php include "includes/config.php"; 
+$nome = "Leonardo";
 $pagina_atual = "sobre";
+$caminho_raiz = "../";
+$titulo_pagina = "Portfolio - {$nome}"
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +20,7 @@ $pagina_atual = "sobre";
 </head>
 <body>
     <main>
-        <?php include "includes/cabecalho.php"; ?>
+        <?php include "../includes/cabecalho.php"; ?>
                
                 <ul class="blocos">
             <div class="box1">
@@ -43,7 +46,7 @@ $pagina_atual = "sobre";
         </ul>
 
         
-        <?php include "includes/rodape.php"; ?>
+        <?php include "../includes/rodape.php"; ?>
     </main>
 </body>
 </html>
