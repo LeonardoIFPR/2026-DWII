@@ -1,3 +1,18 @@
+2026-DWII — Desenvolvimento Web II
+
+Repositório da disciplina **Desenvolvimento Web II** — 2026
+**Profe. Berssa** | IFPR — Centro de Referência Ponta Grossa
+
+---
+
+## 👤 Estudante
+
+- **Nome: Leonardo Garbuio Cavalheiro
+- **Turma: 3º ano — Técnico em Informática Integrado ao Ensino Médio
+- **Ano: 2026
+
+---
+
 # 📬 Aula 04 — Formulário de Contato
 
 **Disciplina:** Desenvolvimento Web II (DWII)  
@@ -74,3 +89,7 @@ http://localhost:8000/02_formularios/contato.php
 ## 🧠 Conceitos Aplicados
 
 `$_POST` `$_GET` `$_SERVER` `header()` `exit` `trim()` `empty()` `strlen()` `htmlspecialchars()` `filter_var()` `urlencode()` `PRG pattern`
+
+---
+
+*Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*

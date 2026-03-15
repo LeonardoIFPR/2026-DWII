@@ -1,3 +1,18 @@
+2026-DWII — Desenvolvimento Web II
+
+Repositório da disciplina **Desenvolvimento Web II** — 2026
+**Profe. Berssa** | IFPR — Centro de Referência Ponta Grossa
+
+---
+
+## 👤 Estudante
+
+- **Nome: Leonardo Garbuio Cavalheiro
+- **Turma: 3º ano — Técnico em Informática Integrado ao Ensino Médio
+- **Ano: 2026
+
+---
+
 # Portfólio Dinâmico — Aula 03 DWII
 
 Mini-site de portfólio pessoal desenvolvido em PHP puro.
@@ -21,3 +36,7 @@ Acesse: http://localhost:8000
   - cabecalho.php  — cabeçalho HTML compartilhado
   - rodape.php     — rodapé HTML compartilhado
   - nav.php        — menu dinâmico com destaque na página ativa
+
+---
+
+*Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*

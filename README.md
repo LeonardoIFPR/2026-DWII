@@ -18,20 +18,27 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 | Pasta | Conteúdo |
 |-------|----------|
 | `00_apresentacao/` | Página de apresentação pessoal (HTML + CSS) |
+| `01_php-intro/` | Introdução ao PHP — páginas dinâmicas (index, sobre, projetos) |
+| `02_formularios/` | Formulários em PHP (contato e página de agradecimento) |
+| `includes/` | Componentes reutilizáveis (cabeçalho, nav, rodapé, config, estilos) |
 
 ---
 
 ## 🌐 Páginas Publicadas
 
 - 📄 [Página de Apresentação](00_apresentacao/index.html)
+- 📄 [PHP Intro — Index](01_php-intro/index.php)
+- 📄 [PHP Intro — Sobre](01_php-intro/sobre.php)
+- 📄 [PHP Intro — Projetos](01_php-intro/projetos.php)
+- 📄 [Formulário de Contato](02_formularios/contato.php)
 
 ---
 
 ## 🔗 Como visualizar
 
 1. Clone o repositório: `git clone https://github.com/SEU-USUARIO/2026-DWII`
-2. Acesse a pasta `00_apresentacao/`
-3. Abra o arquivo `index.html` no navegador
+2. Para páginas HTML, abra diretamente no navegador (ex.: `00_apresentacao/index.html`)
+3. Para páginas PHP, utilize um servidor local (XAMPP, WAMP ou `php -S localhost:8000`)
 
 ---
 
