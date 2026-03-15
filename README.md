@@ -36,7 +36,7 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 
 ## 🔗 Como visualizar
 
-1. Clone o repositório: `git clone https://github.com/SEU-USUARIO/2026-DWII`
+1. Clone o repositório: `git clone https://github.com/LeonardoIFPR/2026-DWII`
 2. Para páginas HTML, abra diretamente no navegador (ex.: `00_apresentacao/index.html`)
 3. Para páginas PHP, utilize um servidor local (XAMPP, WAMP ou `php -S localhost:8000`)
 
