@@ -1,10 +1,11 @@
 <!--
   Disciplina : Desenvolvimento Web II (DWII)
-  Aula       : 03 - PHP Intro
+  Aula       : 04 — PHP para Web: Formulários, GET e POST
   Autor      : Leonardo Garbuio
-  Data       : 02/032026
+  Data       : 15/03/2026
+  Caminho    : /workspaces/2026-DWII/01_php-intro/index.php
 -->
-<?php include "includes/config.php"; 
+<?php include "../includes/config.php"; 
 $nome = "Leonardo";
 $pagina_atual = "inicio";
 $caminho_raiz = "../";
@@ -28,10 +29,12 @@ $titulo_pagina = "Portfolio - {$nome}"
             </div>
 
             <div class="topo_texto">
-                <p class="faixa">&#9733; Disciplina WEB II &#9733;</p>
-                <h1>MEU NOME É</h1>
-                <h1><span class="nome"><?php echo $nome; ?></span></h1>
-                <p>Estudante do <?php echo $escola; ?> &bull; <?php echo $curso; ?> &bull; Desde 2023</p>
+                <div class="portfolio-texto">
+                    <p class="faixa">&#9733; Disciplina WEB II &#9733;</p>
+                    <h1>MEU NOME É</h1>
+                    <h1><span class="nome"><?php echo $nome; ?> <br>Garbuio</span></h1>
+                    <p>Estudante do <?php echo $escola; ?> &bull; <?php echo $curso; ?> &bull; Desde 2023</p>
+                </div>
             </div>
         </div>
 

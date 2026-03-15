@@ -1,10 +1,11 @@
 <!--
   Disciplina : Desenvolvimento Web II (DWII)
-  Aula       : 03 - PHP Intro
+  Aula       : 04 — PHP para Web: Formulários, GET e POST
   Autor      : Leonardo Garbuio
-  Data       : 02/03/2026
+  Data       : 15/03/2026
+  Caminho    : /workspaces/2026-DWII/01_php-intro/projetos.php
 -->
-<?php include "includes/config.php"; 
+<?php include "../includes/config.php"; 
 $nome = "Leonardo";
 $pagina_atual = "projetos";
 $caminho_raiz = "../";
@@ -65,7 +66,7 @@ $titulo_pagina = "Portfolio - {$nome}"
             <?php endforeach; ?>
         </ul>
 
-        <?php include ";;/includes/rodape.php"; ?>
+        <?php include "../includes/rodape.php"; ?>
     </main>
 </body>
 </html>

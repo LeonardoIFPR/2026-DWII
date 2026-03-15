@@ -1,10 +1,11 @@
 <!--
   Disciplina : Desenvolvimento Web II (DWII)
-  Aula       : 03 - PHP Intro
+  Aula       : 04 — PHP para Web: Formulários, GET e POST
   Autor      : Leonardo Garbuio
-  Data       : 02/032026
+  Data       : 15/03/2026
+  Caminho    : /workspaces/2026-DWII/01_php-intro/sobre.php
 -->
-<?php include "includes/config.php"; 
+<?php include "../includes/config.php"; 
 $nome = "Leonardo";
 $pagina_atual = "sobre";
 $caminho_raiz = "../";
@@ -15,7 +16,7 @@ $titulo_pagina = "Portfolio - {$nome}"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio de <?php echo'nome'; ?></title>
+    <title>portfolio de <?php echo $nome; ?></title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>

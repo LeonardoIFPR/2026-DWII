@@ -1,6 +1,13 @@
+<!--
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 04 — PHP para Web: Formulários, GET e POST
+  Autor      : Leonardo Garbuio
+  Data       : 15/03/2026
+  Caminho    : /workspaces/2026-DWII/02_formularios/contato.php
+-->
 <?php 
 $nome = "Leonardo";
-$pagina_atual = "contatos";
+$pagina_atual = "contato";
 $caminho_raiz = "../";
 $titulo_pagina = "Contato";
 
@@ -33,16 +40,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     if (empty($erros) && $_SERVER["REQUEST_METHOD"] === "POST") {
-        header("location: obrigado.php?nome=" . urlencode($nome_visitante) . "&assunto=" . urlencode($assunto));   
+        header("location: obrigado.php?nome=" . urlencode($nome_visitante) . "&assunto=" . urlencode($assunto) . "&caracteres=" . $caracteres_usados);
         exit;
     }
 
 }
 ?> 
-
+<main>
 <?php include "../includes/cabecalho.php"; ?>
 
-<div class="container">
+<div class="padding_text">
     <h1 class="titulo_secao">Formulario de contato</h1>
     <form class="form_container" action="contato.php" method="post" novalidate>
         <label>Seu nome: </label>
@@ -76,3 +83,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php endif ?>
 
 <?php include "../includes/rodape.php"; ?>
+
+</main>
