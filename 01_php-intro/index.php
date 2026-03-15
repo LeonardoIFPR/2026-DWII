@@ -6,7 +6,7 @@
   Caminho    : /workspaces/2026-DWII/01_php-intro/index.php
 -->
 <?php include "../includes/config.php"; 
-$nome = "Leonardo";
+$nome = "LEONARDO";
 $pagina_atual = "inicio";
 $caminho_raiz = "../";
 $titulo_pagina = "Portfolio - {$nome}"
@@ -16,25 +16,22 @@ $titulo_pagina = "Portfolio - {$nome}"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
     <title>portfolio de <?php echo $nome; ?></title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <main>
         <?php include "../includes/cabecalho.php"; ?>
-
         <div class="topo">
             <div class="cor_da_margem">
                 <img src="imgs/pikachu.webp" alt="minha foto">
             </div>
 
             <div class="topo_texto">
-                <div class="portfolio-texto">
-                    <p class="faixa">&#9733; Disciplina WEB II &#9733;</p>
-                    <h1>MEU NOME É</h1>
-                    <h1><span class="nome"><?php echo $nome; ?> <br>Garbuio</span></h1>
-                    <p>Estudante do <?php echo $escola; ?> &bull; <?php echo $curso; ?> &bull; Desde 2023</p>
-                </div>
+                <p class="faixa">&#9733; Disciplina WEB II &#9733;</p>
+                <h1>MEU NOME É</h1>
+                <h1><span class="nome"><?php echo $nome; ?> <br>GARBUIO</span></h1>
+                <p>Estudante do <?php echo $escola; ?> &bull; <?php echo $curso; ?> &bull; Desde 2023</p>
             </div>
         </div>
 
