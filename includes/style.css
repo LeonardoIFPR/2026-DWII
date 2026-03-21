@@ -9,7 +9,7 @@ body {
 }
 
 
-h1.titulo_secao, h1.confirmacao_titulo {
+h1.titulo_secao, h1.confirmacao_titulo, h1.titulo-secao {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 52px;
     color: #f5f5f5;
@@ -73,6 +73,10 @@ main {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+.container-catalogo {
+    border-top: none;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -113,10 +117,6 @@ nav a.ativo {
 }
 
 
-.container, .container_confirmacao {
-    padding: 40px;
-    box-sizing: border-box;
-}
 
 
 header {
@@ -488,6 +488,226 @@ button[type="submit"]:hover, .btn:hover {
 
 .cor_laranja{
     color: #FF6B00;
+}
+
+
+/* ================================================
+   CATÁLOGO DE TECNOLOGIAS
+   ================================================ */
+
+.busca-container {
+    margin-bottom: 20px;
+}
+
+.busca-container form {
+    display: flex;
+    gap: 10px;
+}
+
+.busca-container input[type="text"] {
+    flex: 1;
+}
+
+.filtros-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.btn-filtro {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #aaa;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-filtro:hover {
+    border-color: #FF6B00;
+    color: #FF6B00;
+}
+
+.btn-filtro.ativo {
+    border-color: #FF6B00;
+    color: #FF6B00;
+}
+
+.subtitulo-contador {
+    color: #555;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s, transform 0.2s;
+    animation: slideDown 0.5s ease both;
+}
+
+.card:hover {
+    border-color: #FF6B00;
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
+}
+
+.card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    color: #f5f5f5;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+}
+
+.badge-categoria {
+    background: #1a1200;
+    color: #FF6B00;
+    border: 1px solid #3a2800;
+    padding: 3px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-family: monospace;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.link-detalhe {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #FF6B00;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    font-family: 'Barlow', sans-serif;
+}
+
+.link-detalhe:hover {
+    opacity: 0.7;
+}
+
+
+/* ================================================
+   DETALHE DA TECNOLOGIA
+   ================================================ */
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #FF6B00;
+    color: #FF6B00;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 7px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-voltar:hover {
+    background: #FF6B00;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.detalhe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.detalhe-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 3px;
+    color: #f5f5f5;
+    margin: 0;
+    line-height: 1;
+}
+
+.detalhe-descricao {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 30px 0;
+}
+
+.tabela-detalhes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.tabela-detalhes tr {
+    border-bottom: 1px solid #1a1a1a;
+    transition: background 0.15s;
+}
+
+.tabela-detalhes tr:hover {
+    background: #0d0d0d;
+}
+
+.tabela-detalhes td {
+    padding: 14px 16px;
+}
+
+.tabela-detalhes td:first-child {
+    color: #555;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: monospace;
+    width: 160px;
+    border-right: 1px solid #1a1a1a;
+}
+
+.tabela-detalhes td:last-child {
+    color: #f5f5f5;
 }
 
 @keyframes slideDown {

@@ -27,6 +27,9 @@ function menu_class($item, $atual){
         </a>
         <a href="<?php echo $caminho_raiz?>02_formularios/contato.php" <?php echo menu_class("contato", $pagina_atual); ?>>
             Contato
+        </a>    
+        <a href="<?php echo $caminho_raiz?>03_pdo/index.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
+            Catalogo
         </a>
     </div>
 

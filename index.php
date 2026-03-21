@@ -32,6 +32,13 @@ $aulas = [
         "link" => "02_formularios/contato.php",
         "conceitos" => ['$_post', 'validação', 'htmlspecialchars()', 'header()', 'exit']
     ],
+    [
+        "numero" => "05",
+        "nome" => "Catalogo de tecnologias",
+        "desc" => "Conexão com banco de dados via PDO, listagem dinâmica de registros e página de detalhe com consulta de parametros",
+        "link" => "03_pdo/index.php",
+        "conceitos" => ['PDO', 'prepare()', 'fetchAll()', 'filter_input()']
+    ],
 ];
 ?>
 <!DOCTYPE html>

@@ -1,11 +1,11 @@
-<!--
+<?php 
+/*
   Disciplina : Desenvolvimento Web II (DWII)
   Aula       : 04 — PHP para Web: Formulários, GET e POST
   Autor      : Leonardo Garbuio
   Data       : 15/03/2026
   Caminho    : /workspaces/2026-DWII/02_formularios/obrigado.php
--->
-<?php 
+*/
 $nome = "Leonardo";
 $pagina_atual = "contatos";
 $caminho_raiz = "../";
