@@ -78,13 +78,13 @@ $pagina_atual = "";
     <main>
         <?php require_once __DIR__ . "/../includes/cabecalho.php" ?>
         <div class="form-container">
-            <h1 class="titulo_secao" style="text-align: center; font-size: 22px">
+            <h1 class="titulo_secao">
                 Area Restrita
             </h1>
 
             <?php if ($erro): ?>
                 <div class="alerta-erro">
-                    <p style="margin: 0; font-size:14px;">
+                    <p>
                         <?php echo htmlspecialchars($erro); ?>
                     </p>
                 </div>
@@ -100,8 +100,8 @@ $pagina_atual = "";
                 <button type="submit">Entar</button>
             </form>
 
-            <p style="text-align: center; margin-top: 20px; font-size: 13px; color: #6b7280">
-                <a href="../index.php" style="color: #3b579d;">&larr; Volar ao Inicio</a>
+            <p style="text-align: center;">
+                <a href="../index.php" class="link-voltar">&larr; Volar ao Inicio</a>
             </p>
         </div>
     </main>

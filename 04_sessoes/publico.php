@@ -18,7 +18,6 @@ $pagina_atual = "";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="<?php echo $caminho_raiz; ?>includes/style.css">
 </head>
 <body>
     <main>
@@ -27,7 +26,7 @@ $pagina_atual = "";
         <p class="publico-intro">Este conteudo é visivel para qualquer visitante, sem login</p>
         <?php if ($logado): ?>
             <p class="publico-usuario">Ola, <strong><?php echo htmlspecialchars($_SESSION["usuario"]); ?></strong>
-        Voce esta sendo autenticado</p>
+        Voce ja esta autenticado</p>
         <a href="painel.php" class="btn-painel">
             Ir ao Painel
         </a>

@@ -29,8 +29,10 @@ $_SESSION['visitas_perfil']++;
 
 <main>
     <?php require_once __DIR__ . "/../includes/cabecalho.php"; ?>
+
+    <h2 class="titulo-secao">Meu Perfil</h2>
+    
     <div class="card">
-        <h2 class="titulo-secao">Meu Perfil</h2>
 
         <p><strong>Usuario:</strong>
             <?php echo htmlspecialchars($_SESSION["usuario"]); ?>
@@ -45,7 +47,7 @@ $_SESSION['visitas_perfil']++;
         </p>
     </div>
 
-    <p style="margin-top: 24px; text-align: center;">
+    <p>
         <a href="painel.php"  class="btn-voltar-painel">
             Voltar ao Painel
         </a>
