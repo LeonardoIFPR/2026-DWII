@@ -31,9 +31,9 @@ function menu_class($item, $atual){
         <a href="<?php echo $caminho_raiz?>03_pdo/index.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
             Catalogo
         </a>
-    </div>
-
-    <div class="nav-direita">
+        <a href="<?php echo $caminho_raiz?>04_sessoes/publico.php" <?php echo menu_class("Pagina Publica", $pagina_atual); ?>>
+            Publico
+        </a>
         <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("index", $pagina_atual); ?>>
             HUB
         </a>

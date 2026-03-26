@@ -39,6 +39,13 @@ $aulas = [
         "link" => "03_pdo/index.php",
         "conceitos" => ['PDO', 'prepare()', 'fetchAll()', 'filter_input()']
     ],
+    [
+        "numero" => "06",
+        "nome" => "Login e autenticação",
+        "desc" => "Login para area restrita com proteção de dados e proteção contra força bruta simples",
+        "link" => "04_sessoes/publico.php",
+        "conceitos" => ['timer()', 'session_start()', 'session_unset()', 'session_destroy()', 'auth.php']
+    ],
 ];
 ?>
 <!DOCTYPE html>

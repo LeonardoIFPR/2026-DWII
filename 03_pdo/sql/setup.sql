@@ -7,13 +7,12 @@
 */
 
 CREATE TABLE IF NOT EXISTS tecnologias (
-    id INT(11) NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     categoria VARCHAR(50) NOT NULL,
     descricao TEXT,
-    ano_criacao INT(11),
+    ano_criacao INT,
     criado_em TIMESTAMP DEFAULT current_timestamp(),
-    PRIMARY KEY (id)
 );
 
 INSERT INTO tecnologias (nome, categoria, descricao, ano_criacao) VALUES
