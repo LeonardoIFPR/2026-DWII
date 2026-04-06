@@ -46,6 +46,20 @@ $aulas = [
         "link" => "04_sessoes/publico.php",
         "conceitos" => ['timer()', 'session_start()', 'session_unset()', 'session_destroy()', 'auth.php']
     ],
+    [
+        "numero" => "07",
+        "nome" => "Login e autenticação",
+        "desc" => "Login para area restrita com proteção de dados e proteção contra força bruta simples",
+        "link" => "05_crud/index.php",
+        "conceitos" => ['timer()', 'session_start()', 'session_unset()', 'session_destroy()', 'auth.php']
+    ],
+    [
+        "numero" => "08",
+        "nome" => "Cadastro de Projetos",
+        "desc" => "Cadastro simples de projetos realizados contendo link github, titulo e etc",
+        "link" => "05_crud/index.php",
+        "conceitos" => ['timer()', 'session_start()', 'session_unset()', 'session_destroy()', 'auth.php']
+    ],
 ];
 ?>
 <!DOCTYPE html>
