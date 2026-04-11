@@ -13,6 +13,7 @@ $form = [
     "tecnologias" => "",
     "link_github" => "",
     "ano" => date("Y"),
+    "destaque" => 0, //é 0 porque o destaque é 0 e 1 se for 0 não é destaque se for 1 é essa é a logica
 ];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -21,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $form["tecnologias"] = trim($_POST["tecnologias"] ?? "");
     $form["link_github"] = trim($_POST["link_github"] ?? "");
     $form["ano"] = trim($_POST["ano"] ?? date("Y"));
+    $form["destaque"] = isset($_POST["destaque"]) ? 1 : 0; //aqui mesma ideia dos outros a unica diferença é aqui  ? 1 : 0; ele basicamente ta perguntando você é o ou 1 se for 1 você é destaque se for 0 não 
 
     if ($form["nome"] === "") {
         $erro = "O nome do projeto é obrigatorio";
@@ -35,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($erro === "") {
         $pdo = conectar();
 
-        $sql = "insert into projetos (nome, descricao, tecnologias, link_github, ano)
-        values (:nome, :descricao, :tecnologias, :link_github, :ano)";
+        $sql = "insert into projetos (nome, descricao, tecnologias, link_github, ano, destaque)
+        values (:nome, :descricao, :tecnologias, :link_github, :ano, :destaque)";
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -45,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ":tecnologias" => $form["tecnologias"],
             ":link_github" => $form["link_github"] !== "" ? $form["link_github"] : null,
             ":ano" => $form["ano"],
+            ":destaque" => $form["destaque"],//porque usamos 0 e 1 diferente dos outros porque para o destaque vou usar um checbox no cadastro e não tem como voce escrever uma mensagem no checbox ele entende o 0 e 1 como sim e não 1 sim para destaque e 0 não por isso o uso do 0 e 1 
         ]);
 
         header("Location: index.php?cadastro=ok");
@@ -84,6 +87,8 @@ $pagina_atual = "";
                 <input type="url" id="link_github", name="link_github" value="<?php echo htmlspecialchars($form["link_github"]); ?>" placeholder="https://github.com/usuario/repositorio">
                 <label for="ano">Ano: <span>*</span></label>
                 <input type="number" id="ano" name="ano" value="<?php echo htmlspecialchars($form["ano"]); ?>" min="2000" max="<?php echo date("Y") +  1; ?>">
+                <input type="checkbox" id="destaque" name="destaque" value="1" <?php echo $form["destaque"] ? "checked" : ""; ?>>
+                <label for="destaque">Destacar este projeto no topo da lista</label>
 
                 <button type="submit">Salvar Projeto</button>
             </form>
