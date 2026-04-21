@@ -4,7 +4,7 @@ requer_login();
 
 require_once __DIR__ . "/includes/conexao.php";
 
-$id = (int) ($_GET["ID"] ?? 0);
+$id = (int) ($_GET["id"] ?? 0);
 
 if ($id <= 0) {
     header("Location: index.php?erro=id_invalido");
@@ -13,7 +13,7 @@ if ($id <= 0) {
 
 $pdo = conectar();
 $stmt = $pdo->prepare("select * from projetos where id = :id");
-$stmt->execute([":id => $id"]);
+$stmt->execute([":id" => $id]);
 $projeto = $stmt->fetch();
 
 if (!$projeto) {
@@ -64,10 +64,10 @@ $pagina_atual = "";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once __DIR__ . "/../includes/cabecalho.php" ?>
 </head>
 <body>
-    <div>
+    <main>
+        <?php require_once __DIR__ . "/../includes/cabecalho.php" ?>
         <h1>Editar Projeto</h1>
 
         <?php if ($erro): ?>
@@ -87,25 +87,24 @@ $pagina_atual = "";
         <div class="campo">
             <label class="label-campo">Descrição</label>
 
-            <textarea name="descricao" class="input-texto" rows="4" value="<?php echo htmlspecialchars($projeto["descricao"]); ?>"></textarea>
-        </div>
+            <textarea name="descricao" class="input-texto" rows="4"><?php echo htmlspecialchars($projeto["descricao"]); ?></textarea>        </div>
 
         <div class="campo">
             <label class="label-campo">Tecnologias</label>
 
-            <input type="text" name="tecnologias" class="input-texto" value="<?php echo htmlspecialchars($projeto["Tecnologias"]); ?>">
+            <input type="text" name="tecnologias" class="input-texto" value="<?php echo htmlspecialchars($projeto["tecnologias"]); ?>">
         </div>
 
         <div class="campo">
             <label class="label-campo">Link do gitHub (opcional)</label>
 
-            <input type="text" name="nome" class="input-texto" value="<?php echo htmlspecialchars($projeto["link_github"]); ?>">
+            <input type="text" name="link_github" class="input-texto" value="<?php echo htmlspecialchars($projeto["link_github"]); ?>">
         </div>
 
         <div class="campo">
             <label class="label-campo">Ano</label>
 
-            <input type="number" name="ano" class="input-texto" value="<?php echo htmlspecialchars( (int) $projeto["nome"]);?>" min="2000" max="2099" >
+            <input type="number" name="ano" class="input-texto" value="<?php echo htmlspecialchars( (int) $projeto["ano"]);?>" min="2000" max="2099" >
         </div>
 
         <div class="campo">
@@ -113,7 +112,7 @@ $pagina_atual = "";
             <a href="index.php" class="btn-secundario">Cancelar</a>
         </div>
         </form>
-    </div>
+    </main>
     <?php require_once __DIR__ . "/../includes/rodape.php"; ?>
 </body>
 </html>

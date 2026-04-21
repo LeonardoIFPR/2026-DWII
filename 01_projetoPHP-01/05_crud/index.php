@@ -131,9 +131,9 @@ $pagina_atual = "catalogo de projetos";
                     <?php endif ?>  
                     
                     <div>
-                        <a href="editar.php?id=<?php echo htmlspecialchars((int) $projeto["id"]); ?>" class="button_edita">Editar</a>
+                        <a href="editar.php?id=<?php echo (int) $projeto["id"]; ?>" class="button_edita">Editar</a>
 
-                        <a href="excluir.php?id=<?php echo htmlspecialchars((int) $projeto["id"]); ?>" class="perigo_apaga">Excluir</a>
+                        <a href="excluir.php?id=<?php echo (int) $projeto["id"]; ?>" class="perigo_apaga">Excluir</a>
                     </div>
                     </div>
                 <?php endforeach; ?>

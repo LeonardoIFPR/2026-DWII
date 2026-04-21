@@ -7,11 +7,13 @@
 -->
 <?php
 if (!isset($pagina_atual)) $pagina_atual = "";
-if (!isset($caminho_raiz)) $caminho_raiz = "../";
+if (!isset($caminho_raiz)) $caminho_raiz = "./";
 
 function menu_class($item, $atual){
     return ($item === $atual) ? 'class="ativo"' : "";
 }
+
+$logado = isset($_SESSION["usuario"]);
 ?>
 
 <nav>
@@ -38,5 +40,19 @@ function menu_class($item, $atual){
             HUB
         </a>
     </div>
+
+    <?php if ($logado): ?>
+    
+    <a href="<?php echo $caminho_raiz ?>"painel.php><?php echo menu_class("painel", $pagina_atual); ?>
+    Painel
+    </a>
+
+    <a href="<?php echo $caminho_raiz; ?>"logout.php>Sair</a>
+
+    <?php else: ?>
+
+        <a href="<?php echo $caminho_raiz; ?>"login.php   <?php echo menu_class("Login", $pagina_atual); ?>>Login</a>
+
+    <?php endif; ?>
 </nav>
 

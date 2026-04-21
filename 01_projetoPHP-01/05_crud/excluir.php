@@ -13,7 +13,7 @@ if ($id <= 0) {
 
 $pdo = conectar();
 $stmt = $pdo->prepare("select * from projetos where id = :id");
-$stmt->execute([":id => $id"]);
+$stmt->execute([":id" => $id]);
 $projeto = $stmt->fetch();
 
 if (!$projeto) {
@@ -36,10 +36,10 @@ $pagina_atual = "";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once __DIR__ . "/../includes/cabecalho.php"; ?>
 </head>
 <body>
-    <div>
+    <main>
+        <?php require_once __DIR__ . "/../includes/cabecalho.php" ?>
         <h1>Confirmar Exclusão</h1>
 
         <div>
@@ -49,14 +49,14 @@ $pagina_atual = "";
 
             <p>Esta ação <strong>não pode ser desfeita</strong></p>
 
-            <form action="excluir.php?id=<?php echo $id; ?>">
+            <form action="excluir.php?id=<?php echo $id; ?>" method="POST">
                 <div>
-                    <button>Sim excluir</button>
+                    <button type="submit">Sim excluir</button>
                     <a href="index.php">Cancelar</a>
                 </div>
             </form>
         </div>
-    </div>
+    </main>
     <?php require_once __DIR__ . "/../includes/rodape.php";?>
 </body>
 </html>

@@ -9,6 +9,7 @@
 $nome = "Leonardo";
 $subtitulo = "2026 Repositorio - Desenvolvimento WEB-II";
 $pagina_atual = "hub";  
+$caminho_raiz = "./";
 
 $aulas = [
     [
