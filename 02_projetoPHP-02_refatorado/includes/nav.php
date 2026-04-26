@@ -18,22 +18,22 @@ $logado = isset($_SESSION["usuario"]);
 
 <nav>
     <div class="nav-esquerda">
-        <a href="<?php echo $caminho_raiz?>01_php-intro/index.php" <?php echo menu_class("inicio", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("inicio", $pagina_atual); ?>>
             Inicio
         </a>
-        <a href="<?php echo $caminho_raiz?>01_php-intro/sobre.php" <?php echo menu_class("sobre", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>sobre.php" <?php echo menu_class("sobre", $pagina_atual); ?>>
             Sobre
         </a>
-        <a href="<?php echo $caminho_raiz?>01_php-intro/projetos.php" <?php echo menu_class("projetos", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>projetos.php" <?php echo menu_class("projetos", $pagina_atual); ?>>
             Projetos
         </a>
-        <a href="<?php echo $caminho_raiz?>02_formularios/contato.php" <?php echo menu_class("contato", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>contato.php" <?php echo menu_class("contato", $pagina_atual); ?>>
             Contato
         </a>    
-        <a href="<?php echo $caminho_raiz?>03_pdo/index.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
             Catalogo
         </a>
-        <a href="<?php echo $caminho_raiz?>04_sessoes/publico.php" <?php echo menu_class("Pagina Publica", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>publico.php" <?php echo menu_class("Pagina Publica", $pagina_atual); ?>>
             Publico
         </a>
         <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("index", $pagina_atual); ?>>
@@ -51,7 +51,7 @@ $logado = isset($_SESSION["usuario"]);
 
     <?php else: ?>
 
-        <a href="<?php echo $caminho_raiz; ?>"login.php   <?php echo menu_class("Login", $pagina_atual); ?>>Login</a>
+        <a href="<?php echo $caminho_raiz; ?>"login.php <?php echo menu_class("Login", $pagina_atual); ?>>Login</a>
 
     <?php endif; ?>
 </nav>

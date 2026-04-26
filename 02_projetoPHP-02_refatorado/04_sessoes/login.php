@@ -67,7 +67,7 @@ ele nos da o horario atual +60 segundos para liberar eu não pensei em nenhum ou
 
 $titulo_pagina = "Login - Area Restrita";
 $caminho_raiz = "../";
-$pagina_atual = "";
+$pagina_atual = "Login";
 ?>
 
 <!DOCTYPE html>
