@@ -1,4 +1,11 @@
 <?php
+/*
+  Disciplina : Desenvolvimento Web II (DWII)
+  Aula       : 09 — codigo PHP refatorado mudando o arquivo "sobre" para a raiz
+  Autor      : Leonardo Garbuio
+  Data       : 26/04/2026
+  Caminho    : /workspaces/2026-DWII/02_projetoPHP-02_refatorado/index.php
+*/
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

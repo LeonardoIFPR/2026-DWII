@@ -6,9 +6,14 @@
   Data       : 15/03/2026
   Caminho    : /workspaces/2026-DWII/02_formularios/obrigado.php
 */
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $nome = "Leonardo";
 $pagina_atual = "contatos";
-$caminho_raiz = "../";
+$caminho_raiz = "./";
 $titulo_pagina = "Obrigado";
 
 $nome_visitante = htmlspecialchars($_GET["nome"] ?? "visitante");
@@ -17,7 +22,7 @@ $caracteres_usados = (int)($_GET["caracteres"] ?? 0);
 ?>
 
 <main>
-<?php include "../includes/cabecalho.php" ?>
+<?php include "includes/cabecalho.php" ?>
 
 <div class="centraliza">
     <div class="obrigado-check">
@@ -38,5 +43,5 @@ $caracteres_usados = (int)($_GET["caracteres"] ?? 0);
     <a href="contato.php" class="btn">&larr; ENVIAR OUTRA MENSAGEM</a>
 </div>
 
-<?php include "../includes/rodape.php" ?>
+<?php include "includes/rodape.php" ?>
 </main>

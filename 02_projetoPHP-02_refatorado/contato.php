@@ -6,9 +6,15 @@
   Data       : 15/03/2026
   Caminho    : /workspaces/2026-DWII/02_formularios/contato.php
 */
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
 $nome = "Leonardo";
 $pagina_atual = "contato";
-$caminho_raiz = "../";
+$caminho_raiz = "./";
 $titulo_pagina = "Contato";
 
 $nome_visitante = "";
@@ -47,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?> 
 <main>
-<?php include "../includes/cabecalho.php"; ?>
+<?php include "includes/cabecalho.php"; ?>
 
 <div class="padding_text">
     <h1 class="titulo_secao">Formulario de contato</h1>
@@ -82,6 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 <?php endif ?>
 
-<?php include "../includes/rodape.php"; ?>
+<?php include "includes/rodape.php"; ?>
 
 </main>
