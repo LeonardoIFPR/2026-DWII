@@ -22,18 +22,18 @@ $stmt_tecnologias = $pdo->query("select distinct tecnologias from projetos");
 $total_tecnologias = $stmt_tecnologias->fetchAll(PDO::FETCH_COLUMN); //organiza as informações que traz do banco o que facilita a escrita no HTML daria pra usae sem mas daria mais trabalho de escrita
 
 if ($busca != "" || $filtro_tecnologias != "") {
-    $sql = "select * from projetos where nome like :termo and tecnologias like :tecnologia order by destaque desc, criado_em desc limit 3 offset $pula_3";
+    $sql = "select * from projetos where status = 'publicado' and nome like :termo and tecnologias like :tecnologia order by destaque desc, criado_em desc limit 3 offset $pula_3";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([":termo" => "%" . $busca . "%", ":tecnologia" => "%" . $filtro_tecnologias . "%"]);
 } else {
-    $stmt = $pdo->query("select * from projetos order by destaque desc, criado_em desc limit 3 offset $pula_3");
+    $stmt = $pdo->query("select * from projetos where status = 'publicado' order by destaque desc, criado_em desc limit 3 offset $pula_3");
 }
 
 
 $projetos = $stmt->fetchAll();
 
 //esse aqui de baixo todo não precisa so coloquei pq tava estranho quando trocava de pagina e ficava como se não existissem projetos esse é uma trava ele conta quantos projetos tem e não deixo vc ir para uma pagina vazia sem projetos a logica é a msm do de cima a diferença é o count(*) ele é quem faz a contagem de projetos e diz se existe um depois ou não 
-$sql_total = "select count(*) from projetos where nome like :termo and tecnologias like :tecnologia";
+$sql_total = "select count(*) from projetos where status = 'publicado' and nome like :termo and tecnologias like :tecnologia";
 $stmt_total = $pdo->prepare($sql_total);
 $stmt_total->execute([":termo" => "%" . $busca . "%", ":tecnologia" => "%" . $filtro_tecnologias . "%"]);
 $total_registros = $stmt_total->fetchColumn();

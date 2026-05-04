@@ -6,18 +6,24 @@
   Caminho    : /workspaces/2026-DWII/03_pdo/detalhe.php
 -->
 <?php 
-$caminho_raiz = "../";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-require_once "includes/conexao.php";
+$caminho_raiz = "./";
+
+require_once __DIR__ . "/includes/conexao.php";
 
 $id = filter_input (INPUT_GET, "id", FILTER_VALIDATE_INT);
 
-if(!$id) {
-    header("location: index.php");
+if(!$id || $id <= 0) {
+    header("location: catalogo.php");
     exit;
 }
 
-$stmt = $pdo->prepare("select * from tecnologias where id = :id");
+$pdo = conectar();
+
+$stmt = $pdo->prepare("select * from tecnologias where id = :id and status = 'ativo' limit 1");
 $stmt->execute(["id" => $id]);
 $tec = $stmt->fetch();
 
