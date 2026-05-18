@@ -27,16 +27,16 @@ if (usuario_logado()) {
 $erro = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $login = trim($_POST["usuario"] ?? "");
+    $login = trim($_POST["login"] ?? "");
     $senha = $_POST["senha"] ?? "";
 
 if ($login === "" && $senha === "") {
-    $erro = "informe usuario esenha";
+    $erro = "informe usuario e senha";
 }
 else {
     $pdo = conectar();
     $stmt = $pdo->prepare(
-    "select id login, senha and from usuarios where login = :login and status = 'ativo' limit 1"
+    "select id, login, senha from usuarios where login = :login and status = 'ativo' limit 1"
 );
 $stmt->execute([":login" => $login]);
 $usuario = $stmt->fetch();
@@ -47,7 +47,7 @@ if($usuario && password_verify($senha, $usuario["senha"])) {
 
 $log = $pdo->prepare(
     "insert into logs (tabela_afetada, registro_id, acao, usuario_login, detalhes)
-    values ('usuarios', :id, 'login', :login 'login bem sucedido')"
+    values ('usuarios', :id, 'login', :login, 'login bem sucedido')"
 );
 
 $stmt = $pdo->prepare(
@@ -59,13 +59,13 @@ $log->execute([
     ":login" => $usuario["login"],
 ]);
 
-header("location: painel.php");
+header("Location: painel.php");
 exit;
 }
 
 $log = $pdo->prepare(
     "insert into logs (tabela_afetada, registro_id, acao, usuario_login, detalhes)
-    values ('usuarios', 0, 'login_fail', :login 'credenciaisinvalidas')"
+    values ('usuarios', 0, 'login_fail', :login, 'credenciaisinvalidas')"
 );
 
 $log->execute([":login" => $login]);

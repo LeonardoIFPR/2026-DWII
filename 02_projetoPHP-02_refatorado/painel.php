@@ -20,8 +20,8 @@ require_once __DIR__ . "/includes/auth.php";
 requer_login();
 
 $titulo_pagina = "Painel - Area Restrita";
-$caminho_raiz = "../";
-$pagina_atual = "";
+$caminho_raiz = "./";
+$pagina_atual = "painel";
 ?>
 
 <!DOCTYPE html>
