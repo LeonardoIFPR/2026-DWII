@@ -30,7 +30,7 @@ $logado = isset($_SESSION["usuario"]);
         <a href="<?php echo $caminho_raiz?>contato.php" <?php echo menu_class("contato", $pagina_atual); ?>>
             Contato
         </a>    
-        <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
+        <a href="<?php echo $caminho_raiz?>catalogo.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
             Catalogo
         </a>
         <a href="<?php echo $caminho_raiz?>publico.php" <?php echo menu_class("Pagina Publica", $pagina_atual); ?>>

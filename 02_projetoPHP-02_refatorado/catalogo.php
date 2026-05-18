@@ -1,12 +1,11 @@
-<!--
+<?php
+/*
   Disciplina : Desenvolvimento Web II (DWII)
   Aula       : 05 — PHP + MariaDB: persistencia de dados via PDO
   Autor      : Leonardo Garbuio
   Data       : 21/03/2026
   Caminho    : /workspaces/2026-DWII/03_pdo/index.php
--->
-<?php  
-
+*/
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -20,7 +19,6 @@ require_once __DIR__ . "/includes/conexao.php";
 
 $pdo = conectar();
 
-$stmt = $pdo->query("select * from tecnologias where status = 'ativo' order by nome asc");
 $categoria = trim($_GET['categoria'] ?? '');
 $busca = trim($_GET['busca'] ?? '');
 
@@ -82,7 +80,7 @@ $categorias = $stmt_cats->fetchAll();
 
     <?php if (empty($tecnologias)): ?>
         <div class="card card-vazio">
-
+            <p>📭</p>
             <p>Nenhuma tecnologia ativa.</p>
         </div>
     <?php else: ?>

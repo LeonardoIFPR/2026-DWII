@@ -22,11 +22,11 @@ $stmt_tecnologias = $pdo->query("select distinct tecnologias from projetos");
 $total_tecnologias = $stmt_tecnologias->fetchAll(PDO::FETCH_COLUMN); //organiza as informações que traz do banco o que facilita a escrita no HTML daria pra usae sem mas daria mais trabalho de escrita
 
 if ($busca != "" || $filtro_tecnologias != "") {
-    $sql = "select * from projetos where status = 'publicado' and nome like :termo and tecnologias like :tecnologia order by destaque desc, criado_em desc limit 3 offset $pula_3";
+    $sql = "select * from projetos where status = 'publicado' and nome like :termo and tecnologias like :tecnologia order by criado_em desc limit 3 offset $pula_3";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([":termo" => "%" . $busca . "%", ":tecnologia" => "%" . $filtro_tecnologias . "%"]);
 } else {
-    $stmt = $pdo->query("select * from projetos where status = 'publicado' order by destaque desc, criado_em desc limit 3 offset $pula_3");
+    $stmt = $pdo->query("select * from projetos where status = 'publicado' order by criado_em desc limit 3 offset $pula_3");
 }
 
 
