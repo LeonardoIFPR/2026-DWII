@@ -33,19 +33,12 @@ $logado = isset($_SESSION["usuario"]);
         <a href="<?php echo $caminho_raiz?>catalogo.php" <?php echo menu_class("Catalogo", $pagina_atual); ?>>
             Catalogo
         </a>
-        <a href="<?php echo $caminho_raiz?>publico.php" <?php echo menu_class("Pagina Publica", $pagina_atual); ?>>
-            Publico
-        </a>
-        <a href="<?php echo $caminho_raiz?>index.php" <?php echo menu_class("index", $pagina_atual); ?>>
-            HUB
-        </a>
-    </div>
 
     <?php if ($logado): ?>
     
-    <a href="<?php echo $caminho_raiz ?>painel.php"><?php echo menu_class("painel", $pagina_atual); ?>
-    Painel
-    </a>
+        <a href="<?php echo $caminho_raiz ?>painel.php" <?php echo menu_class("painel", $pagina_atual); ?>>
+            Painel
+        </a>
 
     <a href="<?php echo $caminho_raiz; ?>logout.php">Sair</a>
 
@@ -54,5 +47,6 @@ $logado = isset($_SESSION["usuario"]);
         <a href="<?php echo $caminho_raiz; ?>login.php" <?php echo menu_class("Login", $pagina_atual); ?>>Login</a>
 
     <?php endif; ?>
+    </div>
 </nav>
 

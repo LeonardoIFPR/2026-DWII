@@ -1,158 +1,135 @@
-# 02_projetoPHP-02_refatorado
+# 🚀 Portfólio Pessoal PHP — Refatorado e Expandido
 
-## Sobre o projeto
-
-Este projeto é a versão refatorada do portfólio PHP desenvolvido ao longo das aulas de Desenvolvimento Web II (DWII) no IFPR. O objetivo da refatoração foi reorganizar a estrutura de arquivos, corrigir inconsistências técnicas identificadas no projeto original (`01_projetoPHP-01`) e aplicar boas práticas de desenvolvimento PHP, como separação de responsabilidades, reutilização de componentes via `include`, controle de sessão centralizado e saída segura de dados com `htmlspecialchars()`.
+Bem-vindo ao projeto do Portfólio Pessoal em PHP, agora refatorado e expandido com novas funcionalidades de nível avançado (Nível B). Este sistema serve como um painel administrativo e vitrine pública para projetos e tecnologias, implementado puramente em PHP 8.x, utilizando banco de dados MariaDB e estilização CSS customizada e padronizada.
 
 ---
 
-## Estrutura de arquivos
+## 📋 Sumário
+
+- [Visão Geral](#-visão-geral)
+- [Funcionalidades e Novidades (Nível B)](#-funcionalidades-e-novidades-nível-b)
+- [Arquitetura e Padrões Aplicados](#-arquitetura-e-padrões-aplicados)
+- [Estrutura de Arquivos](#-estrutura-de-arquivos)
+- [Instalação e Execução](#-instalação-e-execução)
+- [Estrutura do Banco de Dados](#-estrutura-do-banco-de-dados)
+- [Sobre o Autor](#-sobre-o-autor)
+
+---
+
+## 🔭 Visão Geral
+
+Este projeto nasceu nas aulas de Desenvolvimento Web II (DWII) no Instituto Federal do Paraná (IFPR). A versão atual (Refatorada) reorganiza toda a estrutura de arquivos e traz boas práticas essenciais:
+- **Separação de responsabilidades:** Arquivos separados para cabeçalho, rodapé e menus.
+- **Segurança de dados:** PDO para queries, hashes BCRYPT para senhas e `htmlspecialchars()` para prevenir XSS.
+- **Design Padronizado:** CSS consistente aplicado em 100% das páginas, sem corromper as estruturas de tag HTML.
+
+---
+
+## ⭐ Funcionalidades e Novidades (Nível B)
+
+Atendendo a requisitos de nível avançado e como extra, foram adicionadas as seguintes melhorias que vão além do básico da disciplina:
+
+1. **📄 Trilha de Auditoria (Logs) — `logs.php`**
+   - Página exclusiva para exibir logs detalhados de atividades no sistema.
+   - Qualquer inserção, atualização ou mudança de status (arquivar/desarquivar) é registrada permanentemente e fica disponível em formato legível nesta página.
+
+2. **🔍 Busca Inteligente no Painel Admin**
+   - O painel administrativo (`admin.php`) agora possui um campo de texto onde o administrador pode buscar diretamente pelo **nome** do projeto. O filtro trabalha simultaneamente com os filtros de *status*.
+
+3. **♻️ Desarquivamento de Projetos**
+   - Agora é possível gerir o ciclo de vida dos projetos de forma reversível. Ao acessar um projeto com status "arquivado", surge o botão **Desarquivar**, retornando-o ao estado de rascunho e registrando o retorno no sistema de logs.
+
+4. **🎨 CSS Global**
+   - Todo o sistema (inclusive formulários de login, contato, e a página "Sobre") foram atualizados recebendo classes pontuais para abraçar o CSS primário (`style.css`), proporcionando um visual Cyberpunk-Moderno em todas as instâncias do projeto, utilizando apenas os atributos `class`.
+
+---
+
+## 🛠 Arquitetura e Padrões Aplicados
+
+- **DRY (Don't Repeat Yourself):** Utilização intensiva do diretório `includes/` (`cabecalho.php`, `rodape.php`, `nav.php`) para evitar cópia de código em views.
+- **Autenticação Segura:** Controle de sessão eficiente verificado na raiz da aplicação. O arquivo `nav.php` renderiza condicionalmente se o usuário é visitante ou administrador.
+- **Configurações Centralizadas:** `config.php` aloca todas as variáveis primárias de escola e desenvolvedor, refletindo de forma unânime através das páginas.
+
+---
+
+## 📂 Estrutura de Arquivos
+
+Abaixo, a topografia simplificada do projeto unificado:
 
 ```
 02_projetoPHP-02_refatorado/
 │
-├── index.php                    # Página inicial / portfólio pessoal
-├── sobre.php                    # Página "Sobre" movida para a raiz
+├── index.php                    # Portfólio pessoal e página inicial
+├── projetos.php                 # Vitrine pública de projetos cadastrados
+├── sobre.php                    # Informações do autor (agora responsivo)
+├── contato.php                  # Formulário robusto de contato via POST
+├── catalogo.php                 # Exibição de tecnologias de banco de dados
+│
+├── admin.php                    # Painel CRUD de projetos (Com Busca e Desarquivar)
+├── logs.php                     # [NOVO] Trilha de Auditoria (Visualização de Logs)
+├── login.php                    # Interface de autenticação
+├── logout.php                   # Destruição de sessão e logout
 │
 ├── includes/
-│   ├── cabecalho.php            # Cabeçalho reutilizável (meta tags + nav)
-│   ├── nav.php                  # Navegação dinâmica com estado de login
-│   ├── rodape.php               # Rodapé reutilizável
-│   ├── config.php               # Constantes globais do projeto
-│   └── style.css                # Estilos globais
+│   ├── auth.php                 # Lógica e regras de acesso de administrador
+│   ├── cabecalho.php            # Head HTML dinâmico, meta tags seguras
+│   ├── conexao.php              # Ponte de conexão assíncrona usando PDO
+│   ├── config.php               # Constantes e var globais
+│   ├── nav.php                  # Barra de navegação com estado inteligente
+│   ├── rodape.php               # Encerramento comum
+│   └── style.css                # CSS Global Refatorado
 │
-├── 00_apresentacao/
-│   ├── index.html
-│   └── css/style.css
-│
-├── 01_php-intro/
-│   ├── index.php
-│   ├── projetos.php
-│   ├── sobre.php
-│   └── CSS/style.css
-│
-├── 02_formularios/
-│   ├── contato.php
-│   └── obrigado.php
-│
-├── 03_pdo/
-│   ├── index.php
-│   ├── detalhe.php
-│   ├── 404.php
-│   ├── includes/
-│   │   ├── conexao.php
-│   │   ├── cab_pdo.php
-│   │   └── rod_pdo.php
-│   └── sql/setup.sql
-│
-├── 04_sessoes/
-│   ├── login.php
-│   ├── logout.php
-│   ├── painel.php
-│   ├── perfil.php
-│   ├── publico.php
-│   └── includes/auth.php
-│
-├── 05_crud/
-│   ├── index.php
-│   ├── cadastrar.php
-│   ├── editar.php
-│   ├── excluir.php
-│   ├── detalhe.php
-│   ├── includes/conexao.php
-│   └── sql/setup.sql
-│
-└── images/
-    └── pikachu.webp
+└── sql/
+    └── setup.sql                # Setup do banco 'portfolio' com logs unificados
 ```
 
 ---
 
-## Decisões de refatoração
+## Instalação e Execução
 
-### 1. Adição de meta tags obrigatórias no `cabecalho.php`
+### Pré-requisitos
+- **PHP 8.0+**
+- **Servidor Web** (Apache, Nginx ou o embutido do PHP)
+- **MariaDB / MySQL**
 
-**Problema identificado:** O arquivo `includes/cabecalho.php` original não emitia as meta tags `<meta charset="UTF-8">` e `<meta name="viewport" ...>`, nem a tag `<title>`. Isso significa que cada página era responsável por declará-las manualmente no `<head>`, gerando repetição de código e risco de omissão. Algumas páginas (como `login.php`) chegavam a ter um `<head>` completamente vazio.
+### Passo a Passo
 
-**Solução aplicada:** O `cabecalho.php` refatorado passou a emitir as três tags diretamente, aproveitando a variável `$titulo_pagina` já existente via `htmlspecialchars()`. Com isso, qualquer página que inclua o cabeçalho automaticamente recebe charset, viewport e título corretos, sem necessidade de repetição.
+1. **Banco de Dados**
+   Acesse o seu banco MariaDB e execute o arquivo `sql/setup.sql`:
+   ```bash
+   mariadb -u root -p < sql/setup.sql
+   ```
+   *Isto criará o banco `portfolio` e inserirá os dados padrão do admin e logs.*
+
+2. **Servidor Local Embutido**
+   Acesse o diretório raiz via terminal e inicie o servidor do PHP:
+   ```bash
+   cd 02_projetoPHP-02_refatorado
+   php -S localhost:8000
+   ```
+
+3. **Acessando a Aplicação**
+   No seu navegador, acesse:
+   `http://localhost:8000`
+---
+
+## 🗄️ Estrutura do Banco de Dados
+
+O banco unificado `portfolio` possui 4 tabelas fundamentais:
+
+- **`usuarios`**: Tabela isolada contendo `login`, `senha` (encriptada via bcrypt) e `status`.
+- **`tecnologias`**: Catálogo alimentando a página `catalogo.php`.
+- **`projetos`**: Com status rotativos entre `rascunho`, `publicado`, e `arquivado`.
+- **`logs`**: Registros intocáveis (audit trails) que mantêm o controle rigoroso sobre "quem fez o que e quando".
 
 ---
 
-### 2. Centralização da lógica de autenticação na navegação (`nav.php`)
+## 👨‍💻 Sobre o Autor
 
-**Problema identificado:** O `nav.php` original não tinha acesso ao estado de sessão do usuário. O menu exibia os mesmos links independentemente de o usuário estar logado ou não, o que tornava a interface inconsistente — links como "Painel" e "Sair" ficavam ausentes mesmo quando o usuário estava autenticado, e "Login" permanecia visível após o login.
-
-**Solução aplicada:** No `nav.php` refatorado, foi adicionada a variável `$logado`, que verifica `$_SESSION["usuario"]`. Com base nessa variável, o menu renderiza condicionalmente os links de autenticação: usuários logados veem "Painel" e "Sair"; usuários anônimos veem "Login". Essa abordagem mantém a lógica de exibição no único lugar responsável pela navegação.
-
----
-
-### 3. Reorganização da estrutura de rotas — páginas movidas para a raiz
-
-**Problema identificado:** No projeto original, páginas como `sobre.php` e `index.php` estavam aninhadas dentro de subdiretórios como `01_php-intro/`, o que forçava os links do menu a referenciar caminhos relativos frágeis (ex: `../01_php-intro/sobre.php`). Qualquer reorganização de pastas quebrava todos os links.
-
-**Solução aplicada:** No projeto refatorado, as páginas principais (`index.php`, `sobre.php`) foram movidas para a raiz do projeto. O `nav.php` passou a usar `$caminho_raiz = "./"` como padrão unificado, e os links agora apontam para arquivos na raiz (ex: `sobre.php`, `contato.php`), tornando o sistema de rotas mais simples e menos suscetível a erros de caminho.
-
----
-
-### 4. Extração de constantes globais para `config.php`
-
-**Problema identificado:** Dados como o nome do curso e da instituição estavam duplicados em múltiplos arquivos. Em `sobre.php`, por exemplo, os textos `"cursando tecnico em informatica"` e `"IFPR"` eram escritos diretamente na view, sem nenhuma fonte centralizada de verdade. Alterar qualquer um desses valores exigiria editar vários arquivos manualmente.
-
-**Solução aplicada:** Foi criado (e passou a ser utilizado) o arquivo `includes/config.php`, que declara variáveis como `$curso` e `$escola`. O `sobre.php` refatorado faz `include "includes/config.php"` e usa essas variáveis na renderização. Isso aplica o princípio DRY (Don't Repeat Yourself) e torna futuras alterações institucionais um ponto único de mudança.
-
----
-
-### 5. Inicialização de sessão com verificação de estado (`session_status()`)
-
-**Problema identificado:** O projeto original iniciava sessões com `session_start()` direto em alguns arquivos, sem verificar se a sessão já havia sido iniciada. Em inclusões encadeadas (ex: uma página inclui `cabecalho.php` que inclui `nav.php`), isso gerava erros do tipo `"session already started"` ou supressão silenciosa com `@session_start()`.
-
-**Solução aplicada:** O `index.php` refatorado adota o padrão correto:
-```php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-```
-Essa verificação garante que a sessão seja iniciada apenas uma vez, independentemente da ordem de inclusão dos arquivos, eliminando conflitos em ambientes com múltiplos `include`/`require`.
-
----
-
-## Como executar
-
-### Pré-requisito
-
-PHP 8.x instalado ou ambiente via DevContainer (configuração disponível em `.devcontainer/`).
-
-### Iniciando o servidor embutido
-
-```bash
-# Acesse a raiz do projeto refatorado
-cd 02_projetoPHP-02_refatorado
-
-# Inicie o servidor PHP na porta 8000
-php -S localhost:8000
-```
-
-### Acessando o projeto
-
-Abra o navegador e acesse:
-
-```
-http://localhost:8000
-```
-
-Para acessar a área restrita, utilize:
-
-- **Usuário:** `admin`
-- **Senha:** `dwii2026`
-
----
-
-## Autor
-
-| Campo      | Informação                              |
-|------------|-----------------------------------------|
-| **Nome**   | Leonardo Garbuio                        |
-| **Curso**  | Técnico em Informática                  |
-| **Escola** | IFPR — Instituto Federal do Paraná      |
-| **Disciplina** | Desenvolvimento Web II (DWII)       |
-| **Ano**    | 2026                                    |
+| **Campo**        | **Detalhes**                            |
+| ---------------- | --------------------------------------- |
+| **Nome**         | Leonardo Garbuio                        |
+| **Curso**        | Técnico em Informática Integrado        |
+| **Instituição**  | IFPR — Instituto Federal do Paraná      |
+| **Disciplina**   | Desenvolvimento Web II (DWII)           |
+| **Ano**          | 2026                                    |

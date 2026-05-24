@@ -23,21 +23,21 @@ $categoria = trim($_GET['categoria'] ?? '');
 $busca = trim($_GET['busca'] ?? '');
 
 if ($categoria && $busca) {
-    $stmt = $pdo->prepare("SELECT * FROM tecnologias WHERE categoria = :categoria AND (nome LIKE :palavra OR descricao LIKE :palavra2) ORDER BY nome ASC");
+    $stmt = $pdo->prepare("select * from tecnologias where categoria = :categoria and (nome like :palavra or descricao like :palavra2) order by nome asc");
     $stmt->execute(['categoria' => $categoria, 'palavra' => "%$busca%", 'palavra2' => "%$busca%"]);
 } elseif ($categoria) {
-    $stmt = $pdo->prepare("SELECT * FROM tecnologias WHERE categoria = :categoria ORDER BY nome ASC");
+    $stmt = $pdo->prepare("select * from tecnologias where categoria = :categoria order by nome asc");
     $stmt->execute(['categoria' => $categoria]);
 } elseif ($busca) {
-    $stmt = $pdo->prepare("SELECT * FROM tecnologias WHERE nome LIKE :palavra OR descricao LIKE :palavra2 ORDER BY nome ASC");
+    $stmt = $pdo->prepare("select * from tecnologias where nome like :palavra or descricao like :palavra2 order by nome asc");
     $stmt->execute(['palavra' => "%$busca%", 'palavra2' => "%$busca%"]);
 } else {
-    $stmt = $pdo->query("SELECT * FROM tecnologias ORDER BY nome ASC");
+    $stmt = $pdo->query("select * from tecnologias order by nome asc");
 }
 
 $tecnologias = $stmt->fetchAll();
 
-$stmt_cats = $pdo->query("SELECT DISTINCT categoria FROM tecnologias ORDER BY categoria ASC");
+$stmt_cats = $pdo->query("select distinct categoria from tecnologias order by categoria asc");
 $categorias = $stmt_cats->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -46,32 +46,32 @@ $categorias = $stmt_cats->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo_pagina; ?> | Autor <?php echo $nome; ?></title>
-    <?php include __DIR__ . '/includes/cabecalho.php'; ?>
 </head>
 <body>
 
-<main class="container">
-    <div class="header-flex">
+<main>
+    <?php include __DIR__ . '/includes/cabecalho.php'; ?>
+    <div>
         <h1 class="titulo-secao">Catálogo de Tecnologias</h1>
-        <span class="contador-texto">
+        <div class="subtitulo-contador">
             <?php echo count($tecnologias); ?> tecnologia(s)
-        </span>
+        </div>
     </div>
 
     <div class="busca-container">
-        <form method="get" action="index.php">
+        <form method="get" action="catalogo.php" class="flex-busca">
             <?php if ($categoria): ?>
                 <input type="hidden" name="categoria" value="<?php echo htmlspecialchars($categoria); ?>">
             <?php endif; ?>
-            <input type="text" name="busca" placeholder="Buscar tecnologia..." value="<?php echo htmlspecialchars($busca); ?>">
-            <button type="submit">Buscar</button>
+            <input type="text" name="busca" placeholder="Buscar tecnologia..." value="<?php echo htmlspecialchars($busca); ?>" class="flex-1">
+            <button type="submit" class="btn">Buscar</button>
         </form>
     </div>
 
     <div class="filtros-categoria">
-        <a href="index.php" class="btn-filtro <?php echo !$categoria ? 'ativo' : ''; ?>">Todos</a>
+        <a href="catalogo.php" class="btn-filtro <?php echo !$categoria ? 'ativo' : ''; ?>">Todos</a>
         <?php foreach ($categorias as $cat): ?>
-            <a href="index.php?categoria=<?php echo urlencode($cat['categoria']); ?>" 
+            <a href="catalogo.php?categoria=<?php echo urlencode($cat['categoria']); ?>" 
                class="btn-filtro <?php echo $categoria === $cat['categoria'] ? 'ativo' : ''; ?>">
                 <?php echo htmlspecialchars($cat['categoria']); ?>
             </a>

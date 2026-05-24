@@ -80,7 +80,8 @@ main {
 nav {
     display: flex;
     align-items: center;
-    padding: 20px 40px 30px;
+    padding: 38px 40px;
+    margin-bottom: 60px;
     list-style: none;
     border-bottom: 1px solid #1E1E1E;
     box-sizing: border-box;
@@ -88,9 +89,11 @@ nav {
 
 nav .nav-esquerda {
     display: flex;
-    gap: 36px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
     flex: 1;
-    margin-top: 5px;
+    margin: 0;
 }
 
 nav .nav-direita {
@@ -99,11 +102,12 @@ nav .nav-direita {
 }
 
 nav a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
     text-decoration: none;
+    text-transform: uppercase;
     color: #FF6B00;
     transition: opacity 0.2s;
 }
@@ -195,15 +199,16 @@ h2.secao {
     letter-spacing: 2px;
     margin-top: 40px;
     margin-bottom: 20px;
+    padding: 0 40px;
 }
 
 .box-info {
     background: #141414;
     border: 1px solid #1E1E1E;
     border-left: 4px solid #FF6B00;
-    padding: 24px;
+    padding: 24px 40px;
     border-radius: 4px;
-    margin-bottom: 30px;
+    margin: 0 40px 30px 40px;
 }
 .box-info h3 { margin-top: 0; color: #f5f5f5; font-size: 20px; }
 
@@ -329,9 +334,30 @@ h2.secao {
     background: transparent;
     border: none;
     border-left: none;
-    padding: 30px;
+    padding: 30px 40px;
     border-radius: 4px;
     animation: slideDown 0.8s ease both;
+}
+
+.form_container br {
+    display: none;
+}
+
+.form_container label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.form-login-box {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #0d0d0d;
+    border: 1px solid #1E1E1E;
+    border-top: 3px solid #FF6B00;
 }
 
 label {
@@ -342,9 +368,14 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 input[type="email"],
+input[type="url"],
+input[type="number"],
 textarea,
 select {
+    width: 100%;
+    box-sizing: border-box;
     background-color: #0d0d0d;
     border: 1px solid #1E1E1E;
     color: #f5f5f5;
@@ -489,6 +520,7 @@ button[type="submit"]:hover, .btn:hover {
 
 .busca-container {
     margin-bottom: 20px;
+    padding: 0 40px;
 }
 
 .busca-container form {
@@ -564,6 +596,14 @@ button[type="submit"]:hover, .btn:hover {
     align-items: center;
     margin-bottom: 10px;
     gap: 12px;
+}
+
+.card-header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
@@ -1149,8 +1189,164 @@ footer {
 }
 
 
-/* explicação rapida do codigo o codigo conta com 3 animações todas feitas usando somente CSS essas animações são o efeito no qual faz um ponto preto girar em volta da foto, o surgimento da frase "MEU NOME É
-LEONARDO GARBUIO" e por ultimo o pulsar do meu nome o codigo HTML conta  somente com tags basicas como ul para lista ordenada o li para os itens da lista divs, h1 para titulos a main que é o que cria o quadrado
-e algumas outras tags padrões como body tudo foi estilizado usando o arquivo "style.css" usando tambem tags CSS basicas exceto pela animação (as animações não fojem da realidade e não são dificeis de fazer)
-
-então fiz a explicação so para mostrar que não ouve o uso de IA tirei duvidas dentro dela mas todo desde o codigo ao design foi pensado e feito por mim como disse so tirei duvidas mas sem copiar nada */
+.header-admin-flex {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 40px;
+}
+button[type="submit"].btn-arquivar,
+.btn-arquivar {
+    background: transparent; 
+    border: 1px solid #ef4444; 
+    color: #ef4444; 
+    padding: 6px 12px; 
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+button[type="submit"].btn-arquivar:hover,
+.btn-arquivar:hover {
+    background: #ef4444;
+    color: #fff;
+    transform: translateY(-2px);
+}
+button[type="submit"].btn-desarquivar,
+.btn-desarquivar {
+    background: transparent; 
+    border: 1px solid #10b981; 
+    color: #10b981; 
+    padding: 6px 12px; 
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+button[type="submit"].btn-desarquivar:hover,
+.btn-desarquivar:hover {
+    background: #10b981;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.form-inline-acao {
+    display: inline-flex;
+    margin-left: 15px;
+    align-items: center;
+}
+.paginacao {
+    display: flex; 
+    gap: 10px; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 30px;
+}
+.pagina-numero {
+    font-weight: bold;
+    color: #FF6B00;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.flex-busca {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.flex-busca select {
+    width: auto;
+}
+.flex-1 {
+    flex: 1;
+}
+.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #FF6B00;
+    color: #FF6B00;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 7px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+.btn-secundario:hover {
+    background: #FF6B00;
+    color: #000;
+    transform: translateY(-2px);
+}
+.btn-editar {
+    background: transparent; 
+    border: 1px solid #eab308; 
+    color: #eab308; 
+    padding: 6px 12px; 
+    font-size: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-editar:hover {
+    background: #eab308;
+    color: #000;
+    transform: translateY(-2px);
+}
+.tabela-admin {
+    width: calc(100% - 80px);
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 10px 40px 0 40px;
+    color: #aaa;
+}
+.tabela-admin th {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 2px solid #1E1E1E;
+    color: #f5f5f5;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.tabela-admin tr {
+    border-bottom: 1px solid #1a1a1a;
+    transition: background 0.15s;
+}
+.tabela-admin tr:hover {
+    background: #0d0d0d;
+}
+.tabela-admin td {
+    padding: 14px 16px;
+    vertical-align: middle;
+}
+.tabela-admin td:first-child {
+    color: #f5f5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

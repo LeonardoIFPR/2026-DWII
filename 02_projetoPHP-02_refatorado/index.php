@@ -34,7 +34,7 @@ $email     = '20241ctb0100029@escola.ifpr.edu.br';
     <?php include __DIR__ . '/includes/cabecalho.php'; ?>
         <div class="topo">
             <div class="cor_da_margem">
-                <img src="images/pikachu.webp" alt="minha foto">
+                <img src="includes/images/pikachu.webp" alt="minha foto">
             </div>
 
             <div class="topo_texto">

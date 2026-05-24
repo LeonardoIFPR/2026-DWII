@@ -26,7 +26,7 @@ if (!$id || $id <= 0) {
 
 $pdo = conectar();
 
-$stmt = $pdo->prepare("SELECT * FROM tecnologias WHERE id = :id AND status = 'ativo' LIMIT 1");
+$stmt = $pdo->prepare("select * from tecnologias where id = :id and status = 'ativo' limit 1");
 $stmt->execute([':id' => $id]);
 $tec = $stmt->fetch();
 
@@ -46,11 +46,11 @@ $url_voltar = $categoria ? "index.php?categoria=" . urlencode($categoria) : "ind
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo_pagina; ?></title>
-    <?php include __DIR__ . '/includes/cabecalho.php'; ?>
 </head>
 <body>
 
-<main class="container container-catalogo">
+<main>
+    <?php include __DIR__ . '/includes/cabecalho.php'; ?>
     <a href="<?php echo $url_voltar; ?>" class="btn-voltar">&larr; Voltar ao catálogo</a>
     
     <div class="card">
@@ -73,14 +73,13 @@ $url_voltar = $categoria ? "index.php?categoria=" . urlencode($categoria) : "ind
                 <td><?php echo $tec['ano_criacao']; ?></td>
             </tr>
             <tr>
-                <td>📅 Cadastrado em</td>
+                <td>Cadastrado em</td>
                 <td><?php echo date('d/m/Y \a\s H:i', strtotime($tec['criado_em'])); ?></td>
             </tr>
         </table>
     </div>
+    <?php include __DIR__ . '/includes/rodape.php'; ?>
 </main>
-
-<?php include __DIR__ . '/includes/rodape.php'; ?>
 
 </body>
 </html>

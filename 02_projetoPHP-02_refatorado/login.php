@@ -16,6 +16,10 @@ if (isset($_SESSION["usuario"])) {
 }
 */
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once __DIR__ . "/includes/conexao.php";
 require_once __DIR__ . "/includes/auth.php";
 
@@ -30,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $login = trim($_POST["login"] ?? "");
     $senha = $_POST["senha"] ?? "";
 
-if ($login === "" && $senha === "") {
+if ($login === "" || $senha === "") {
     $erro = "informe usuario e senha";
 }
 else {
@@ -48,10 +52,6 @@ if($usuario && password_verify($senha, $usuario["senha"])) {
 $log = $pdo->prepare(
     "insert into logs (tabela_afetada, registro_id, acao, usuario_login, detalhes)
     values ('usuarios', :id, 'login', :login, 'login bem sucedido')"
-);
-
-$stmt = $pdo->prepare(
-    "select id login, senha and from usuarios where login = :login and status = 'ativo' limit 1"
 );
 
 $log->execute([
@@ -74,20 +74,8 @@ $erro = "Usuario ou senha invalidos";
 }
 }
 
-
-/*
-essa minha bagunça toda de ifs ta fazendo a verificação de tentativas como funciona ele pega oq o usuario digita e compara como ja era antes a mudança agora é adicionar outro else (não é bem adicionar a palavra correta mas não sei como descrever)
-que primeiros criamos um if e dentro criamos a variavel tentativas que esta zerada esse é oq ira contar quantas tentativas foram usadas apos criar isso fazemos a logica para contar quanta
-tentativas foram usadas para isso pegamos tentativas e a cada erro somamos 1 e esse valor fica salvo na variavel depois criamos outro if onde fazemos a comparação se a variavel tentativa
-é menor ou maior que 5 se menor beleza ainda tem chances se não ele passa pro else que diz a msg de erro quantos tentativas ainda tem 
-
-para a logica do timer eu tentei usar algo com o date ou so contar os segundos mas por uma limitação do proprio PHP eu precisei usar essa função do PHP de time
-ele nos da o horario atual +60 segundos para liberar eu não pensei em nenhum outro jeito de fazer o timer 
-*/
-
-
 $titulo_pagina = "Login - Portfolio";
-$caminho_raiz = "../";
+$caminho_raiz = "./";
 $pagina_atual = "Login";
 ?>
 
@@ -98,13 +86,13 @@ $pagina_atual = "Login";
 <body>
     <main>
         <?php require_once __DIR__ . "/includes/cabecalho.php" ?>
-        <h1>Login</h1>
+        <h1 class="titulo-secao" style="text-align: center; width: 100%;">Login</h1>
 
         <?php if ($erro !== ""): ?>
-            <p><?php htmlspecialchars($erro) ?></p>
+            <p class="alerta-erro" style="text-align: center;"><?php echo htmlspecialchars($erro) ?></p>
         <?php endif; ?>
 
-        <form action="POST" action="logn.php">
+        <form class="form_container form-login-box" method="POST" action="login.php">
             <label>Usuario<br>
             <input type="text" name="login" required>
             </label>
@@ -113,7 +101,7 @@ $pagina_atual = "Login";
             <input type="password" name="senha" required>
             </label>
             <br><br>
-            <button type="submit">Entrar</button>
+            <button type="submit" class="btn">Entrar</button>
         </form>
             <?php require_once __DIR__ . "/includes/rodape.php"; ?>
     </main>

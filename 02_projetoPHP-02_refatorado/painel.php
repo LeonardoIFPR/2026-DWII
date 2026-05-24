@@ -16,6 +16,10 @@ if (!isset($_SESSION["usuario"])) {
 }
 */
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once __DIR__ . "/includes/auth.php";
 requer_login();
 
@@ -31,14 +35,13 @@ $pagina_atual = "painel";
 <body>
 
 <main>
-   <h1>Painel</h1>
-   <p>Ola, <strong><?= htmlspecialchars(usuario_atual()) ?> </strong> Você esta em uma area restrita</p>
-   <p>Em breve,esta pagina listara seus projetos para edição (a ser implementado na <strong>Aula 13 - refatoração V</strong>).</p>
-
-   <p>
-        <a href="logout.php">Sair</a>
+<?php require_once __DIR__ . "/includes/cabecalho.php"; ?>
+   <h1 class="titulo-secao">Painel</h1>
+   <p class="publico-intro">Ola, <strong><?= htmlspecialchars(usuario_atual()) ?> </strong> Você esta em uma area restrita</p>
+   <p class="acoes-rodape">
+        <a href="admin.php" class="btn-secundario">Gerenciar Projetos</a>
    </p>
-<?php require_once __DIR__ . "/../includes/rodape.php"; ?>
+<?php require_once __DIR__ . "/includes/rodape.php"; ?>
 </main>
 </body>
 </html>
